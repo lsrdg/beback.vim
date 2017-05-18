@@ -54,6 +54,9 @@ The following mappings will open the location list in different ways:
 | <localleader>bc | All `NOTE: ` marks                                      |
 | <localleader>bb | All `TODO:`, `WARN:` and `NOTE:` in order of appearance |
 
+Once you are _in_ the location list, pressing `q` will close its window.
+
+
 ## Possible (future) enhancements
 
 - Insert mode mappings
