@@ -39,20 +39,20 @@ Now the space bar will be the local leader.
 Just type it in or, if in normal mode, use one of the following maps to get what
 you need inserted.
 
-| Mapping         | Inserts               |
-|-----------------|-----------------------|
-| <localleader>bt | `TODO: ` on the text. |
-| <localleader>bw | `WARN: ` on the text. |
-| <localleader>bn | `NOTE: ` on the text. |
+| Mapping           | Inserts               |
+|-------------------|-----------------------|
+| `<localleader>bt` | `TODO: ` on the text. |
+| `<localleader>bw` | `WARN: ` on the text. |
+| `<localleader>bn` | `NOTE: ` on the text. |
 
 The following mappings will open the location list in different ways:
 
-| Mapping         | Shows                                                   |
-|-----------------|---------------------------------------------------------|
-| <localleader>bz | All `TODO: ` marks                                      |
-| <localleader>bx | All `WARN: ` marks                                      |
-| <localleader>bc | All `NOTE: ` marks                                      |
-| <localleader>bb | All `TODO:`, `WARN:` and `NOTE:` in order of appearance |
+| Mapping           | Shows                                                   |
+|-------------------|---------------------------------------------------------|
+| `<localleader>bz` | All `TODO: ` marks                                      |
+| `<localleader>bx` | All `WARN: ` marks                                      |
+| `<localleader>bc` | All `NOTE: ` marks                                      |
+| `<localleader>bb` | All `TODO:`, `WARN:` and `NOTE:` in order of appearance |
 
 Once you are _in_ the location list, pressing `q` will close its window.
 
