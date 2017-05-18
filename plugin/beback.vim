@@ -1,6 +1,6 @@
-f !exists("g:comeback_localleader")
+if !exists("g:beback_localleader")
     let maplocalleader = ","
-    let g:comeback_localleader = "<localleader>"
+    let g:beback_localleader = "<localleader>"
 endif
 
 function! s:FindAllActions()
@@ -46,6 +46,28 @@ nnoremap <script> <buffer> <silent> <localleader>bx
 nnoremap <script> <buffer> <silent> <localleader>bc
     \ :call <SID>FindAction(3)<cr>
 
+let s:comment_syntax = {
+    \   "c": '\/\/',
+    \   "go": '\/\/',
+    \   "java": '\/\/',
+    \   "javascript": '\/\/',
+    \   "lua": '--',
+    \   "scala": '\/\/',
+    \   "php": '\/\/',
+    \   "python": '#',
+    \   "ruby": '#',
+    \   "rust": '\/\/',
+    \   "sh": '#',
+    \   "desktop": '#',
+    \   "fstab": '#',
+    \   "conf": '#',
+    \   "profile": '#',
+    \   "bashrc": '#',
+    \   "bash_profile": '#',
+    \   "vim": '"',
+    \	"css": '\/* \*/',
+    \	"html": '<!-- -->'
+    \ }
 
 function! s:InsertAction(action)
     if a:action == 1
@@ -56,8 +78,14 @@ function! s:InsertAction(action)
 	let pattern = "NOTE: "
     endif
 
-    execute "normal! a" . pattern
+    if has_key(s:comment_syntax, &filetype)
+	let comment_structure = s:comment_syntax[&filetype]
+    endif
+
+
+    execute "normal! a" . comment_structure . " " . pattern
     startinsert!
+
 endfunction
 
 nnoremap <script> <buffer> <silent> <localleader>bt
