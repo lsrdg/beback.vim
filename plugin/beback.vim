@@ -80,11 +80,21 @@ function! s:InsertAction(action)
 
     if has_key(s:comment_syntax, &filetype)
 	let comment_structure = s:comment_syntax[&filetype]
+	let which_filetype = &filetype
+
+	if which_filetype == 'html'
+	    execute "normal! a" . comment_structure 
+	    execute "normal! F a " . pattern
+	    execute "normal! F:la "
+	    startinsert
+	elseif which_filetype == 'css'
+	    execute "normal! a" . comment_structure 
+	    execute "normal! F a " . pattern
+	else
+	    execute "normal! a" . comment_structure . " " . pattern
+	endif
+
     endif
-
-
-    execute "normal! a" . comment_structure . " " . pattern
-    startinsert!
 
 endfunction
 
