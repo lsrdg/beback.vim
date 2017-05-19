@@ -11,15 +11,18 @@
 ## Introduction
 
 The plugin provides shortcuts to insert `TODO: `, `WARN: ` and `NOTE:` on your
-text/code.
+text/code _as comments_.
 
 Once you have some "NOTES: blablabla", a couple of "TODO: uhuhuhu" and a bunch
 of "WARN: poooow!", beback.vim will give you quick access to them.
 
+The "supported languages" list is pretty much opinionated; just what I would use
+over here, since so far it is only for personal use. Open an issue, send a pull request, or just fork it to add your
+favorite flavor.
 
 ## Setup
 
-Use your favorite plugin manager. With
+Use your favorite plugin manager. For instance, with
 [Vim-Plug](https://github.com/junegunn/vim-plug):
 
 ```
@@ -62,8 +65,7 @@ Once you are _in_ the location list, pressing `q` will close its window.
 - Insert mode mappings
 - let user define the `b` prefix (and not only the localleader)
 - add a proper `doc/comeback.txt`
-- detect the language and insert the mark as a language's comment (to avoid
-  compiling issues)
+- let the user add comment styles
 - allow other markup style 
 
 ## Bugs, issues, contributions and a warning
