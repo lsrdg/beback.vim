@@ -84,18 +84,17 @@ function! s:InsertAction(action)
 
 	if which_filetype == 'html'
 	    execute "normal! a" . comment_structure 
-	    execute "normal! F a " . pattern
-	    execute "normal! F:la "
-	    startinsert
+	    execute "normal! F a " . pattern 
 	elseif which_filetype == 'css'
 	    execute "normal! a" . comment_structure 
 	    execute "normal! F a " . pattern
+	    execute "normal! F:la "
 	else
 	    execute "normal! a" . comment_structure . " " . pattern
 	endif
-
     endif
 
+    startinsert
 endfunction
 
 nnoremap <script> <buffer> <silent> <localleader>bt
